@@ -1844,4 +1844,4 @@ var ExampleComponent = function ExampleComponent(_ref) {
 
 exports.ExampleComponent = ExampleComponent;
 exports["default"] = AuthForm;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.modern.js.map

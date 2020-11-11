@@ -1,11 +1,11 @@
 {
   "name": "wu-auth-form-testing",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Made with create-react-library",
   "author": "spadeg39475",
   "license": "MIT",
   "repository": "spadeg39475/wu-auth-form-test",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
