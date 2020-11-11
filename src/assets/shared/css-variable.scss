@@ -1,0 +1,93 @@
+// Color
+$warning-red: #ee4747;
+$dark-purple: #878393;
+
+$colar-red: #ed4747;
+$colar-yellow: #f5ba00;
+$colar-dark-green: #84c43e;
+$colar-blue: #42bbdb;
+$color-white: #ffffff;
+$colar-light-yellow: #fff3d2;
+$colar-heavy-yellow: #fcb827;
+
+$shadow-red: #f06449;
+$shadow-blue: #42badb;
+$shadow-glowing-blue: rgb(160, 220, 232);
+
+$dark-gray: #999999;
+$light-gray: #e5e5e5;
+$app-background-gray: #f2f2f2;
+$modal-background-blue: #383b3d;
+$modal-background-black: #333333;
+$modal-text-black: #52585b;
+
+$color-tag-green: #16c172;
+$color-tag-yellow: #ffc914;
+$color-tag-red: #f06449;
+
+$translation-green: #25a043;
+
+// radius px
+$xs-radius: 2px;
+$s-radius: 4px;
+$m-radius: 8px;
+$l-radius: 10px;
+
+// Space
+$xs-sp: 5px;
+$s-sp: 15px;
+$m-sp: 30px;
+$l-sp: 45px;
+$xl-sp: 60px;
+
+// App's Space system
+$app-xs-sp: 4px;
+$app-s-sp: 8px;
+$app-sm-sp: 12px;
+$app-m-sp: 16px;
+$app-l-sp: 32px;
+$app-xl-sp: 60px;
+
+// Grid
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == upto-tablet-landscape {
+    @media (max-width: 899px) {
+      @content;
+    }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  } @else if $size == upto-desktop {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  }
+}
+
+// Modal
+$max-height: 65vh;
+
+// Font
+$roboto-font: 'Roboto', sans-serif;
+$roboto-regular: 'Roboto-Regular', sans-serif;
+$noto-font: 'Noto Sans TC', sans-serif;
+
+// Size
+$nav-header-height: 50px;

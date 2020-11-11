@@ -1,0 +1,135 @@
+@import '../../../assets/shared/css-variable.scss';
+
+.container--auth-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-white;
+  min-height: 70vh;
+  background-color: $color-white;
+  font-family: $noto-font;
+  color: $modal-background-blue;
+  position: relative;
+
+  @include for-size(tablet-portrait-up) {
+    min-height: 550px;
+  }
+
+  .container--main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    @include for-size(tablet-portrait-up) {
+      max-width: 300px;
+    }
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 2.76px;
+    margin-bottom: $m-sp;
+
+    @include for-size(tablet-portrait-up) {
+      font-size: 28px;
+    }
+  }
+
+  .container--action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-white;
+    width: 228px;
+    height: 47px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: solid 0.9px #979797;
+    font-size: 13.5px;
+    letter-spacing: 1.5px;
+    line-height: 13.5px;
+
+    .content {
+      display: flex;
+      align-items: center;
+      min-width: 150px;
+    }
+
+    @include for-size(tablet-portrait-up) {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .container--prompt {
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    margin-top: $s-sp;
+    .hint {
+      color: $shadow-blue;
+      outline: none;
+      cursor: pointer;
+    }
+    @include for-size(tablet-portrait-up) {
+      font-size: 13px;
+    }
+  }
+
+  .container--icon {
+    width: 18px;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+}
+
+.back {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 24px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.field {
+  width: 100%;
+  height: 40px;
+  border-bottom: solid 1px lightgray;
+  line-height: 40px;
+  margin-bottom: 15px;
+
+  input {
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding-left: $s-sp;
+    color: #808080;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.btn--sign-in {
+  width: 100%;
+  height: 47px;
+  border-radius: 6px;
+  background-color: $shadow-blue;
+  border: none;
+  color: $color-white;
+  letter-spacing: 2px;
+  margin-top: $m-sp;
+}
+
+.field__err-msg {
+  position: relative;
+  top: -10px;
+  left: 10px;
+  color: #ed4747;
+  font-size: 14px;
+  align-self: start;
+}
