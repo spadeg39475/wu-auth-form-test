@@ -5,8 +5,7 @@
   "author": "spadeg39475",
   "license": "MIT",
   "repository": "spadeg39475/wu-auth-form-test",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "main": "src/index.js",
   "source": "src/index.js",
   "engines": {
     "node": ">=10"
@@ -52,7 +51,7 @@
     "dist"
   ],
   "dependencies": {
-    "node-sass": "^5.0.0",
+    "node-sass": "^4.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
