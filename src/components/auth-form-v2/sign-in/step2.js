@@ -9,7 +9,7 @@ import styles from './sign-in.module.scss'
 
 const cx = classNames.bind(styles)
 
-export default function SignInForm({
+export default function SignInFormStep2({
   toggleAuthLayout,
   back,
   handleChange,
@@ -82,14 +82,14 @@ export default function SignInForm({
   )
 }
 
-SignInForm.propTypes = {
+SignInFormStep2.propTypes = {
   onFinish: Proptypes.func.isRequired,
   onRequest: Proptypes.func.isRequired,
   onSuccess: Proptypes.func,
   onFail: Proptypes.func
 }
 
-SignInForm.defaultProps = {
+SignInFormStep2.defaultProps = {
   onSuccess: null,
   onFail: null
 }

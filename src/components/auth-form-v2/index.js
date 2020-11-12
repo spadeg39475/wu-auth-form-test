@@ -24,17 +24,20 @@ export default function AuthForm({
   onSuccess,
   onSubmit,
   handleOnSuccess,
-  handleChange,
   responseFacebook,
   handleFBError,
   responseGoogle,
   handleGoogleError,
   redirectUri,
-  ErrorNotifier
+  facebookAppId,
+  googleClientId,
+  authLayout,
+  setAuthLayout,
+  toggleAuthLayout,
+  termsOfServiceUrl,
+  children
 }) {
-  const [authLayout, setAuthLayout] = useState('sign-in')
   const [step, setStep] = useState(1)
-  // const { page, action, materialId } = useContext(FbRedirectContext);
 
   const next = () => {
     setStep((prevState) => prevState + 1)
@@ -44,7 +47,9 @@ export default function AuthForm({
     setStep((prevState) => prevState - 1)
   }
 
-  const toggleAuthLayout = () => {
+  const toggleAuth = () => {
+    if (toggleAuthLayout) return toggleAuthLayout()
+
     let layout
     if (authLayout === 'sign-up') {
       layout = 'sign-in'
@@ -66,8 +71,6 @@ export default function AuthForm({
       },
       validator: signInValidate,
       defaultCtaText: '登入'
-      // fieldsComponent: SignInFields,
-      // apiCall: signInApi,
     },
     'sign-up': {
       initialValues: {
@@ -78,18 +81,10 @@ export default function AuthForm({
       },
       validator: signUpValidate,
       defaultCtaText: '註冊新帳號'
-      // fieldsComponent: SignUpFields,
-      // apiCall: signUpApi,
     }
   }
 
-  const {
-    initialValues,
-    validator,
-    defaultCtaText
-    // fieldsComponent: Fields,
-    // apiCall,
-  } = SETTINGS_MAPPING[authLayout]
+  const { initialValues, validator } = SETTINGS_MAPPING[authLayout]
 
   const checkShouldShowGoogleLogin = () => {
     if (isIosWebview() || isAndroidWebview()) return false
@@ -116,7 +111,7 @@ export default function AuthForm({
               onRequest={onRequest}
               onFail={onFail}
               step={step}
-              toggleAuthLayout={toggleAuthLayout}
+              toggleAuthLayout={toggleAuth}
               next={next}
               back={back}
               handleChange={handleChange}
@@ -128,6 +123,10 @@ export default function AuthForm({
               handleGoogleError={handleGoogleError}
               checkShouldShowGoogleLogin={checkShouldShowGoogleLogin}
               redirectUri={redirectUri}
+              facebookAppId={facebookAppId}
+              googleClientId={googleClientId}
+              termsOfServiceUrl={termsOfServiceUrl}
+              children={children}
             />
           </Form>
         )
@@ -140,10 +139,13 @@ AuthForm.propTypes = {
   onFinish: Proptypes.func.isRequired,
   onRequest: Proptypes.func.isRequired,
   onSuccess: Proptypes.func,
-  onFail: Proptypes.func
+  onFail: Proptypes.func,
+  authLayout: Proptypes.string,
+  setAuthLayout: Proptypes.func
 }
 
 AuthForm.defaultProps = {
   onSuccess: null,
-  onFail: null
+  onFail: null,
+  authLayout: 'sign-in'
 }

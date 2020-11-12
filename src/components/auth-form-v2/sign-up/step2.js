@@ -9,13 +9,14 @@ import styles from './sign-up.module.scss'
 
 const cx = classNames.bind(styles)
 
-export default function SignUpForm({
+export default function SignUpFormStep2({
   toggleAuthLayout,
   back,
   handleChange,
   handleSubmit,
   isSubmitting,
-  termsOfServiceUrl
+  termsOfServiceUrl,
+  children
 }) {
   return (
     <>
@@ -101,20 +102,21 @@ export default function SignUpForm({
               登入
             </span>
           </div>
+          {children}
         </div>
       </div>
     </>
   )
 }
 
-SignUpForm.propTypes = {
+SignUpFormStep2.propTypes = {
   onFinish: Proptypes.func.isRequired,
   onRequest: Proptypes.func.isRequired,
   onSuccess: Proptypes.func,
   onFail: Proptypes.func
 }
 
-SignUpForm.defaultProps = {
+SignUpFormStep2.defaultProps = {
   onSuccess: null,
   onFail: null
 }

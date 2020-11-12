@@ -1,11 +1,12 @@
 {
   "name": "wu-auth-form-testing",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Made with create-react-library",
   "author": "spadeg39475",
   "license": "MIT",
   "repository": "spadeg39475/wu-auth-form-test",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
     "node": ">=10"
@@ -48,7 +49,8 @@
     "react-scripts": "^3.4.1"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "dependencies": {
     "node-sass": "^4.0.0",

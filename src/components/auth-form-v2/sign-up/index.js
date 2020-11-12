@@ -29,7 +29,8 @@ export default function SignUpForm({
   redirectUri,
   facebookAppId,
   googleClientId,
-  termsOfServiceUrl
+  termsOfServiceUrl,
+  children
 }) {
   if (step === 2) {
     return (
@@ -40,7 +41,7 @@ export default function SignUpForm({
         toggleAuthLayout={toggleAuthLayout}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        isSubmitting={isSubmitting}
+        children={children}
       />
     )
   }
@@ -157,6 +158,7 @@ export default function SignUpForm({
             使用者條款
           </a>
         </div>
+        {children}
       </div>
     </div>
   )
