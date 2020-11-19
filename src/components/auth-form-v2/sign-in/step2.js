@@ -14,7 +14,8 @@ export default function SignInFormStep2({
   back,
   handleChange,
   handleSubmit,
-  isSubmitting
+  isSubmitting,
+  children
 }) {
   return (
     <>
@@ -56,7 +57,7 @@ export default function SignInFormStep2({
           />
 
           <button
-            type='button'
+            type='submit'
             formFor='auth-form'
             className={cx('btn--sign-in')}
             onClick={handleSubmit}
@@ -76,6 +77,7 @@ export default function SignInFormStep2({
               註冊
             </span>
           </div>
+          {children}
         </div>
       </div>
     </>

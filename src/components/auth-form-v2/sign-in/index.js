@@ -28,7 +28,8 @@ export default function SignInForm({
   checkShouldShowGoogleLogin,
   redirectUri,
   facebookAppId,
-  googleClientId
+  googleClientId,
+  children
 }) {
   if (step === 2) {
     return (
@@ -40,6 +41,7 @@ export default function SignInForm({
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         isSubmitting={isSubmitting}
+        children={children}
       />
     )
   }
@@ -134,6 +136,7 @@ export default function SignInForm({
             註冊
           </span>
         </div>
+        {children}
       </div>
     </div>
   )

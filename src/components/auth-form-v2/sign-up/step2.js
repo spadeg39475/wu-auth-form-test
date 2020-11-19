@@ -82,7 +82,7 @@ export default function SignUpFormStep2({
           </div>
 
           <button
-            type='button'
+            type='submit'
             formFor='auth-form'
             className={cx('btn--sign-in')}
             onClick={handleSubmit}
