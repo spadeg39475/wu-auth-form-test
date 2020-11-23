@@ -1,6 +1,6 @@
 {
-  "name": "@spadeg/wu-auth-form-testing",
-  "version": "1.1.1",
+  "name": "wu-auth-form-testing",
+  "version": "1.1.2",
   "description": "Made with create-react-library",
   "author": "spadeg39475",
   "license": "MIT",
@@ -53,20 +53,21 @@
     "src"
   ],
   "dependencies": {
-    "node-sass": "^4.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "formik": "^1.5.8",
     "classnames": "^2.2.6",
     "compare-versions": "^3.5.1",
+    "formik": "^1.5.8",
     "lodash.isempty": "^4.4.0",
+    "node-sass": "^4.0.0",
+    "react-apple-login": "^1.1.1",
     "react-device-detect": "^1.11.14",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.1.21",
-    "store": "^2.0.12",
-    "react-lazyload": "^2.6.5"
+    "react-lazyload": "^2.6.5",
+    "store": "^2.0.12"
   }
 }

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login'
+import AppleLogin from 'react-apple-login'
 
 import WebpImg from '../../webp-img'
 import SignInStep2 from './step2.js'
@@ -29,6 +30,7 @@ export default function SignInForm({
   redirectUri,
   facebookAppId,
   googleClientId,
+  state,
   children
 }) {
   if (step === 2) {
@@ -59,6 +61,7 @@ export default function SignInForm({
           responseType='token'
           redirectUri={redirectUri}
           onFailure={handleFBError}
+          state={state}
           // isMobile={false}
           // disableMobileRedirect={true}
           render={(renderProps) => (
@@ -110,6 +113,14 @@ export default function SignInForm({
             )}
           />
         )}
+
+        <AppleLogin
+          // clientId={'com.wordup.iosapp.staging'}
+          // redirectURI={'https://staging.wordup.com.tw/app/materials'}
+          // responseType={"code"}
+          // responseMode={"query"}
+          usePopup={true}
+        />
 
         <button
           className={cx('container--action')}

@@ -30,6 +30,7 @@ export default function SignUpForm({
   facebookAppId,
   googleClientId,
   termsOfServiceUrl,
+  state,
   children
 }) {
   if (step === 2) {
@@ -73,6 +74,7 @@ export default function SignUpForm({
           responseType='token'
           redirectUri={redirectUri}
           onFailure={handleFBError}
+          state={state}
           // isMobile={false}
           // disableMobileRedirect={true}
           render={(renderProps) => (

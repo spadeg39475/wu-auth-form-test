@@ -35,6 +35,7 @@ export default function AuthForm({
   setAuthLayout,
   toggleAuthLayout,
   termsOfServiceUrl,
+  state,
   children
 }) {
   const [step, setStep] = useState(1)
@@ -126,6 +127,7 @@ export default function AuthForm({
               facebookAppId={facebookAppId}
               googleClientId={googleClientId}
               termsOfServiceUrl={termsOfServiceUrl}
+              state={state}
               children={children}
             />
           </Form>
