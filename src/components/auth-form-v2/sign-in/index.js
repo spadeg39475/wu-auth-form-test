@@ -114,14 +114,6 @@ export default function SignInForm({
           />
         )}
 
-        <AppleLogin
-          // clientId={'com.wordup.iosapp.staging'}
-          // redirectURI={'https://staging.wordup.com.tw/app/materials'}
-          // responseType={"code"}
-          // responseMode={"query"}
-          usePopup={true}
-        />
-
         <button
           className={cx('container--action')}
           onClick={next}
