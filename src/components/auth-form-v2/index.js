@@ -100,15 +100,7 @@ export default function AuthForm({
     <Formik
       initialValues={initialValues}
       validate={(values) => validator(values)}
-      onSubmit={(value, actions) => {
-        try {
-          onSubmit()
-        } catch (err) {
-          console.log(err)
-        } finally {
-          actions.setSubmitting(false)
-        }
-      }}
+      onSubmit={onSubmit}
       render={(formikProps) => {
         const { handleChange, handleSubmit, isSubmitting } = formikProps
 
@@ -157,5 +149,5 @@ AuthForm.propTypes = {
 AuthForm.defaultProps = {
   onSuccess: null,
   onFail: null,
-  authLayout: 'sign-in'
+  authLayout: 'sign-up'
 }

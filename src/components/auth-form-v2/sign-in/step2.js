@@ -61,7 +61,6 @@ export default function SignInFormStep2({
             formFor='auth-form'
             className={cx('btn--sign-in')}
             onClick={handleSubmit}
-            disabled={isSubmitting}
           >
             登入
           </button>

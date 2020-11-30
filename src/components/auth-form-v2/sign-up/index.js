@@ -60,7 +60,7 @@ export default function SignUpForm({
         </div>
         <div className={cx('container--image', 'cuties')}>
           <WebpImg
-            imgUrl='https://wordup-production-public.s3-ap-northeast-1.amazonaws.com/shop/assets/sign+up+page/sign_up_cuties'
+            imgUrl='https://wordup-production-public.s3-ap-northeast-1.amazonaws.com/shop/assets/sign+up+page/sign_up_cuties.png'
             alt='sign-up cuties'
             lazyLoad={false}
           />

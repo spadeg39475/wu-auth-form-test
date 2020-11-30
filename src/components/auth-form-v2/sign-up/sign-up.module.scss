@@ -47,6 +47,38 @@
     }
     &.cuties {
       max-width: 150px;
+      margin-bottom: 10px;
+      position: relative;
+      top: 0;
+      animation: move 2s infinite;
+      -webkit-animation: move 2s infinite;
+    }
+    @keyframes move {
+      0% {
+        top: 0px;
+      }
+
+      50% {
+        top: -15px;
+      }
+
+      100% {
+        top: 0px;
+      }
+    }
+
+    @-webkit-keyframes move {
+      0% {
+        top: 0px;
+      }
+
+      50% {
+        top: -15px;
+      }
+
+      100% {
+        top: 0px;
+      }
     }
 
     @include for-size(tablet-portrait-up) {
