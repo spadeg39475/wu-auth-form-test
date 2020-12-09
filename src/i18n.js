@@ -7,15 +7,12 @@ const resources = {
   en: EnResources,
   tw: TwResources
 }
-console.log('process.env.NODE_ENV', process.env.NODE_ENV)
 
-i18n
-  // detect user language
-  // learn more: https://github.com/i18next/i18next-browser-languageDetector
-  // .use(LanguageDetector)
-  // pass the i18n instance to react-i18next.
-  .use(initReactI18next)
-  .init({
+// because the host react-app might have i18n instance already which will cause error
+// (actually a white screen without any error messages)
+// we need to create new instance
+const newInstance = i18n.use(initReactI18next).createInstance(
+  {
     resources,
     debug: process.env.NODE_ENV === 'development',
     interpolation: {
@@ -23,6 +20,10 @@ i18n
     },
     lng: 'tw',
     fallbackLng: 'en'
-  })
+  },
+  (err, t) => {
+    if (err) return console.log('something went wrong loading', err)
+  }
+)
 
-export default i18n
+export default newInstance

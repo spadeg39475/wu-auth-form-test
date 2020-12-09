@@ -7,7 +7,7 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 import GoogleLogin from 'react-google-login'
 import { useTranslation } from 'react-i18next'
 
-import WebpImg from '../..//webp-img'
+import WebpImg from '../../webp-img'
 import SignUpStep2 from './step2.js'
 
 import styles from './sign-up.module.scss'

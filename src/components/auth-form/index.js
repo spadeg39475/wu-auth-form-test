@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Proptypes from 'prop-types'
 import { Formik, Form } from 'formik'
-import { useTranslation } from 'react-i18next'
+import { I18nextProvider } from 'react-i18next'
 
 import {
   signInValidate,
   signUpValidate
 } from '../../lib/validator/auth-fields.js'
-
 import { isIosWebview, isAndroidWebview } from '../../lib/device.js'
+import i18nInstance from '../../i18n'
 
 import SignIn from './sign-in'
 import SignUp from './sign-up'
@@ -35,11 +35,10 @@ function AuthForm({
   children,
   language = 'tw'
 }) {
-  const { i18n } = useTranslation()
   const [step, setStep] = useState(1)
 
   useEffect(() => {
-    i18n.changeLanguage(language)
+    i18nInstance.changeLanguage(language)
   }, [language])
 
   const next = () => {
@@ -97,7 +96,7 @@ function AuthForm({
   }
 
   return (
-    <div>
+    <I18nextProvider i18n={i18nInstance}>
       <Formik
         initialValues={initialValues}
         validate={(values) => validator(values)}
@@ -135,7 +134,7 @@ function AuthForm({
           )
         }}
       />
-    </div>
+    </I18nextProvider>
   )
 }
 
