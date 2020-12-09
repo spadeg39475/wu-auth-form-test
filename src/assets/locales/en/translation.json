@@ -1,0 +1,46 @@
+{
+  "translation": {
+    "submit": "Submit",
+    "login": "Log in",
+    "signup": "Sign up",
+    "facebook": {
+      "login": "Facebook",
+      "signup": "Facebook"
+    },
+    "google": {
+      "login": "Google",
+      "signup": "Google"
+    },
+    "username": {
+      "title": "Username",
+      "plhdr": "Your name",
+      "err": "Please fill in your username"
+    },
+    "email": {
+      "login": "Email",
+      "signup": "Email",
+      "plhdr": "Your email address",
+      "plhdr_signup": "An email address as your account",
+      "err": "Invalid email address"
+    },
+    "required_field": "Required",
+    "dont_have_account_yet": "New to WORD UP?",
+    "has_account": "Already have a WORD UP account?",
+    "signup_form": {
+      "title": "Create your account",
+      "email_form_title": "Email Sign Up"
+    },
+    "pwd": {
+      "title": "Password",
+      "plhdr": "Your password",
+      "plhdr_set": "At least 6 characters",
+      "err": {
+        "length_invalid": "Must be at least 6 characters long"
+      }
+    },
+    "terms_of_service": {
+      "signup_means_agree": "Sign up your account means you understand and agree to",
+      "policies": "Privacy Policy and Terms of Service"
+    }
+  }
+}

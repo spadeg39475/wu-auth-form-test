@@ -1,4 +1,5 @@
 import React from 'react'
-import AuthForm from './components/auth-form-v2/index'
+
+import AuthForm from './components/auth-form/index'
 
 export default AuthForm

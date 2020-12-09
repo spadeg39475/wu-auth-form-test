@@ -1,0 +1,46 @@
+{
+  "translation": {
+    "submit": "送出",
+    "login": "登入",
+    "signup": "註冊",
+    "facebook": {
+      "login": "Facebook",
+      "signup": "Facebook"
+    },
+    "google": {
+      "login": "Google",
+      "signup": "Google"
+    },
+    "username": {
+      "title": "使用者名稱",
+      "plhdr": "輸入使用者名稱",
+      "err": "請輸入使用者名稱"
+    },
+    "email": {
+      "login": "Email",
+      "signup": "Email",
+      "plhdr": "輸入電子信箱",
+      "plhdr_signup": "輸入註冊用的電子信箱",
+      "err": "email 格式不符"
+    },
+    "required_field": "必填欄位",
+    "dont_have_account_yet": "還沒有帳號？",
+    "has_account": "已經有帳號了？",
+    "signup_form": {
+      "title": "註冊新帳號",
+      "email_form_title": "Email 註冊"
+    },
+    "pwd": {
+      "title": "密碼",
+      "plhdr": "輸入密碼",
+      "plhdr_set": "至少 6 個字元",
+      "err": {
+        "length_invalid": "至少 6 個字元"
+      }
+    },
+    "terms_of_service": {
+      "signup_means_agree": "註冊即表示您已閱讀並同意",
+      "policies": "隱私權及使用者條款"
+    }
+  }
+}

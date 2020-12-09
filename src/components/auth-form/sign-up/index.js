@@ -5,16 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login'
-import AppleLogin from 'react-apple-login'
+import { useTranslation } from 'react-i18next'
 
 import WebpImg from '../../webp-img'
-import SignInStep2 from './step2.js'
+import SignUpStep2 from './step2.js'
 
-import styles from './sign-in.module.scss'
+import styles from './sign-up.module.scss'
 
 const cx = classNames.bind(styles)
 
-export default function SignInForm({
+export default function SignUpForm({
   toggleAuthLayout,
   next,
   back,
@@ -30,19 +30,22 @@ export default function SignInForm({
   redirectUri,
   facebookAppId,
   googleClientId,
+  termsOfServiceUrl,
   state,
   children
 }) {
+  const { t, i18n } = useTranslation()
+  const { language: lang } = i18n
+
   if (step === 2) {
     return (
-      <SignInStep2
+      <SignUpStep2
         step={step}
         next={next}
         back={back}
         toggleAuthLayout={toggleAuthLayout}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        isSubmitting={isSubmitting}
         children={children}
       />
     )
@@ -51,8 +54,23 @@ export default function SignInForm({
   return (
     <div className={cx('container--auth-form')}>
       <div className={cx('container--main')}>
-        <div className={cx('title')}>登入</div>
-
+        <div className={cx('title')}>{t('signup_form.title')}</div>
+        <div className={cx('container--image', 'dialog')}>
+          <WebpImg
+            imgUrl={`https://wordup-production-public.s3-ap-northeast-1.amazonaws.com/shop/assets/sign+up+page/dialog${
+              lang === 'tw' ? '' : `_${lang}`
+            }.png`}
+            alt='dialog'
+            lazyLoad={false}
+          />
+        </div>
+        <div className={cx('container--image', 'cuties')}>
+          <WebpImg
+            imgUrl='https://wordup-production-public.s3-ap-northeast-1.amazonaws.com/shop/assets/sign+up+page/sign_up_cuties.png'
+            alt='sign-up cuties'
+            lazyLoad={false}
+          />
+        </div>
         <FacebookLogin
           appId={facebookAppId}
           fields='name,email'
@@ -78,12 +96,11 @@ export default function SignInForm({
                     lazyLoad={false}
                   />
                 </div>
-                Facebook 登入
+                <div className={cx('btn-txt')}> {t('facebook.signup')}</div>
               </div>
             </button>
           )}
         />
-
         {checkShouldShowGoogleLogin() && (
           <GoogleLogin
             clientId={googleClientId}
@@ -107,13 +124,12 @@ export default function SignInForm({
                       lazyLoad={false}
                     />
                   </div>
-                  Google 登入
+                  <div className={cx('btn-txt')}> {t('google.signup')}</div>
                 </div>
               </button>
             )}
           />
         )}
-
         <button
           className={cx('container--action')}
           onClick={next}
@@ -124,20 +140,25 @@ export default function SignInForm({
               icon={faEnvelope}
               className={cx('container--icon')}
             />
-            Email 登入
+            <div className={cx('btn-txt')}> {t('email.signup')}</div>
           </div>
         </button>
-
         <div className={cx('container--prompt')}>
-          還沒有帳號？{' '}
+          {t('has_account')}
           <span
             className={cx('hint')}
             onClick={toggleAuthLayout}
             role='button'
             tabIndex='0'
           >
-            註冊
+            {t('login')}
           </span>
+        </div>
+        <div className={cx('container--prompt')}>
+          {`${t('terms_of_service.signup_means_agree')}`}
+          <a target='_blank' className={cx('hint')} href={termsOfServiceUrl}>
+            {t('terms_of_service.policies')}
+          </a>
         </div>
         {children}
       </div>
@@ -145,14 +166,15 @@ export default function SignInForm({
   )
 }
 
-SignInForm.propTypes = {
+SignUpForm.propTypes = {
   onFinish: Proptypes.func.isRequired,
-  onRequest: Proptypes.func.isRequired,
+  onRequest: Proptypes.func,
   onSuccess: Proptypes.func,
   onFail: Proptypes.func
 }
 
-SignInForm.defaultProps = {
+SignUpForm.defaultProps = {
   onSuccess: null,
-  onFail: null
+  onFail: null,
+  onRequest: null
 }
