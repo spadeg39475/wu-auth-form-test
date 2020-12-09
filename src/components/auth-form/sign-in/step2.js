@@ -1,25 +1,27 @@
 import classNames from 'classnames/bind'
-import React, { Fragment } from 'react'
 import Proptypes from 'prop-types'
+import React, { Fragment } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { ErrorMessage } from 'formik'
+import { useTranslation } from 'react-i18next'
 
-import styles from './sign-up.module.scss'
+import styles from './sign-in.module.scss'
 
 const cx = classNames.bind(styles)
 
-export default function SignUpFormStep2({
+export default function SignInFormStep2({
   toggleAuthLayout,
   back,
   handleChange,
   handleSubmit,
   isSubmitting,
-  termsOfServiceUrl,
   children
 }) {
+  const { t } = useTranslation()
+
   return (
-    <>
+    <Fragment>
       <FontAwesomeIcon
         icon={faArrowLeft}
         className={cx('back')}
@@ -27,25 +29,9 @@ export default function SignUpFormStep2({
       />
       <div className={cx('container--auth-form')}>
         <div className={cx('container--main')}>
-          <div className={cx('title', 'step2')}>Email 註冊</div>
-
           <div className={cx('field')}>
             <input
-              placeholder='用戶名'
-              className={cx('text-input')}
-              onChange={handleChange}
-              name='username'
-              type='text'
-            />
-          </div>
-          <ErrorMessage
-            name='username'
-            component='div'
-            className={cx('field__err-msg')}
-          />
-          <div className={cx('field')}>
-            <input
-              placeholder='帳號 Email'
+              placeholder={t('email.plhdr')}
               className={cx('text-input')}
               onChange={handleChange}
               name='email'
@@ -60,62 +46,57 @@ export default function SignUpFormStep2({
 
           <div className={cx('field')}>
             <input
-              placeholder='密碼'
+              placeholder={t('pwd.plhdr')}
               className={cx('text-input')}
               onChange={handleChange}
               name='password'
               type='password'
             />
           </div>
+
           <ErrorMessage
             name='password'
             component='div'
             className={cx('field__err-msg')}
           />
 
-          <div className={cx('container--prompt')}>
-            註冊即表示您已閱讀並同意
-            <br />
-            <a target='_blank' className={cx('hint')} href={termsOfServiceUrl}>
-              使用者條款
-            </a>
-          </div>
-
           <button
             type='submit'
-            formFor='auth-form'
+            formfor='auth-form'
             className={cx('btn--sign-in')}
             onClick={handleSubmit}
           >
-            送出
+            {t('login')}
           </button>
 
           <div className={cx('container--prompt')}>
-            已經有帳號了？{' '}
+            {t('dont_have_account_yet')}
             <span
               className={cx('hint')}
               onClick={toggleAuthLayout}
               role='button'
               tabIndex='0'
             >
-              登入
+              {t('signup')}
             </span>
           </div>
           {children}
         </div>
       </div>
-    </>
+    </Fragment>
   )
 }
 
-SignUpFormStep2.propTypes = {
-  onFinish: Proptypes.func.isRequired,
-  onRequest: Proptypes.func.isRequired,
+SignInFormStep2.propTypes = {
+  onFinish: Proptypes.func,
+  onRequest: Proptypes.func,
   onSuccess: Proptypes.func,
   onFail: Proptypes.func
 }
 
-SignUpFormStep2.defaultProps = {
+SignInFormStep2.defaultProps = {
+  onFinish: null,
+  onRequest: null,
   onSuccess: null,
   onFail: null
 }

@@ -5,15 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login'
+import AppleLogin from 'react-apple-login'
+import { useTranslation } from 'react-i18next'
 
-import WebpImg from '../..//webp-img'
-import SignUpStep2 from './step2.js'
+import WebpImg from '../../webp-img'
+import SignInStep2 from './step2.js'
 
-import styles from './sign-up.module.scss'
+import styles from './sign-in.module.scss'
 
 const cx = classNames.bind(styles)
 
-export default function SignUpForm({
+export default function SignInForm({
   toggleAuthLayout,
   next,
   back,
@@ -29,19 +31,21 @@ export default function SignUpForm({
   redirectUri,
   facebookAppId,
   googleClientId,
-  termsOfServiceUrl,
   state,
   children
 }) {
+  const { t } = useTranslation()
+
   if (step === 2) {
     return (
-      <SignUpStep2
+      <SignInStep2
         step={step}
         next={next}
         back={back}
         toggleAuthLayout={toggleAuthLayout}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        isSubmitting={isSubmitting}
         children={children}
       />
     )
@@ -50,21 +54,7 @@ export default function SignUpForm({
   return (
     <div className={cx('container--auth-form')}>
       <div className={cx('container--main')}>
-        <div className={cx('title')}>註冊新帳號</div>
-        <div className={cx('container--image', 'dialog')}>
-          <WebpImg
-            imgUrl='https://wordup-production-public.s3-ap-northeast-1.amazonaws.com/shop/assets/sign+up+page/dialog.png'
-            alt='dialog'
-            lazyLoad={false}
-          />
-        </div>
-        <div className={cx('container--image', 'cuties')}>
-          <WebpImg
-            imgUrl='https://wordup-production-public.s3-ap-northeast-1.amazonaws.com/shop/assets/sign+up+page/sign_up_cuties.png'
-            alt='sign-up cuties'
-            lazyLoad={false}
-          />
-        </div>
+        <div className={cx('title')}>{t('login')}</div>
 
         <FacebookLogin
           appId={facebookAppId}
@@ -91,7 +81,7 @@ export default function SignUpForm({
                     lazyLoad={false}
                   />
                 </div>
-                Facebook 註冊
+                <div className={cx('btn-txt')}> {t('facebook.login')}</div>
               </div>
             </button>
           )}
@@ -120,7 +110,7 @@ export default function SignUpForm({
                       lazyLoad={false}
                     />
                   </div>
-                  Google 註冊
+                  <div className={cx('btn-txt')}> {t('google.login')}</div>
                 </div>
               </button>
             )}
@@ -137,28 +127,20 @@ export default function SignUpForm({
               icon={faEnvelope}
               className={cx('container--icon')}
             />
-            Email 註冊
+            <div className={cx('btn-txt')}> {t('email.login')}</div>
           </div>
         </button>
 
         <div className={cx('container--prompt')}>
-          已經有帳號了？{' '}
+          {`${t('dont_have_account_yet')} `}
           <span
             className={cx('hint')}
             onClick={toggleAuthLayout}
             role='button'
             tabIndex='0'
           >
-            登入
+            {t('signup')}
           </span>
-        </div>
-
-        <div className={cx('container--prompt')}>
-          註冊即表示您已閱讀並同意
-          <br />
-          <a target='_blank' className={cx('hint')} href={termsOfServiceUrl}>
-            使用者條款
-          </a>
         </div>
         {children}
       </div>
@@ -166,14 +148,15 @@ export default function SignUpForm({
   )
 }
 
-SignUpForm.propTypes = {
+SignInForm.propTypes = {
   onFinish: Proptypes.func.isRequired,
-  onRequest: Proptypes.func.isRequired,
+  onRequest: Proptypes.func,
   onSuccess: Proptypes.func,
   onFail: Proptypes.func
 }
 
-SignUpForm.defaultProps = {
+SignInForm.defaultProps = {
   onSuccess: null,
-  onFail: null
+  onFail: null,
+  onRequest: null
 }

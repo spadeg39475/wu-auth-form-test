@@ -1,6 +1,6 @@
 {
-  "name": "wu-auth-form-testing",
-  "version": "1.1.8",
+  "name": "wu-auth-form-test",
+  "version": "1.2.0",
   "description": "Made with create-react-library",
   "author": "spadeg39475",
   "license": "MIT",
@@ -61,12 +61,14 @@
     "classnames": "^2.2.6",
     "compare-versions": "^3.5.1",
     "formik": "^1.5.8",
+    "i18next": "^19.8.4",
     "lodash.isempty": "^4.4.0",
     "node-sass": "^4.0.0",
     "react-apple-login": "^1.1.1",
     "react-device-detect": "^1.11.14",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.1.21",
+    "react-i18next": "^11.8.1",
     "react-lazyload": "^2.6.5",
     "store": "^2.0.12"
   }

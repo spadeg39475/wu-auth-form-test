@@ -120,11 +120,14 @@
     margin-top: $s-sp;
     text-align: center;
     line-height: 1.8;
+
     .hint {
       color: $shadow-blue;
       outline: none;
       cursor: pointer;
+      margin-left: 5px;
     }
+
     @include for-size(tablet-portrait-up) {
       font-size: 13px;
     }
@@ -134,6 +137,11 @@
     width: 18px;
     margin-right: 10px;
     font-size: 18px;
+  }
+
+  .btn-txt {
+    flex-grow: 1;
+    text-align: center;
   }
 }
 
