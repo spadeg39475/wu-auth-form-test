@@ -7,6 +7,7 @@ const resources = {
   en: EnResources,
   tw: TwResources
 }
+console.log('process.env.NODE_ENV', process.env.NODE_ENV)
 
 i18n
   // detect user language

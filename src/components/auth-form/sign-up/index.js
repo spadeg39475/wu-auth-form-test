@@ -64,7 +64,6 @@ export default function SignUpForm({
             lazyLoad={false}
           />
         </div>
-
         <div className={cx('container--image', 'cuties')}>
           <WebpImg
             imgUrl='https://wordup-production-public.s3-ap-northeast-1.amazonaws.com/shop/assets/sign+up+page/sign_up_cuties.png'
@@ -72,7 +71,6 @@ export default function SignUpForm({
             lazyLoad={false}
           />
         </div>
-
         <FacebookLogin
           appId={facebookAppId}
           fields='name,email'
@@ -103,7 +101,6 @@ export default function SignUpForm({
             </button>
           )}
         />
-
         {checkShouldShowGoogleLogin() && (
           <GoogleLogin
             clientId={googleClientId}
@@ -133,7 +130,6 @@ export default function SignUpForm({
             )}
           />
         )}
-
         <button
           className={cx('container--action')}
           onClick={next}
@@ -147,7 +143,6 @@ export default function SignUpForm({
             <div className={cx('btn-txt')}> {t('email.signup')}</div>
           </div>
         </button>
-
         <div className={cx('container--prompt')}>
           {t('has_account')}
           <span
@@ -159,14 +154,12 @@ export default function SignUpForm({
             {t('login')}
           </span>
         </div>
-
         <div className={cx('container--prompt')}>
           {`${t('terms_of_service.signup_means_agree')}`}
           <a target='_blank' className={cx('hint')} href={termsOfServiceUrl}>
             {t('terms_of_service.policies')}
           </a>
         </div>
-
         {children}
       </div>
     </div>

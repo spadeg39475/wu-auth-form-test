@@ -1,6 +1,6 @@
 {
   "name": "wu-auth-form-test",
-  "version": "1.2.2",
+  "version": "1.2.5-beta.2",
   "description": "Made with create-react-library",
   "author": "spadeg39475",
   "license": "MIT",
@@ -24,8 +24,10 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "i18next": "^19.6.3",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-i18next": "^11.7.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -60,16 +62,15 @@
     "classnames": "^2.2.6",
     "compare-versions": "^3.5.1",
     "formik": "^1.5.8",
-    "i18next": "^19.8.4",
+    "i18next": "^19.6.3",
     "lodash.isempty": "^4.4.0",
     "node-sass": "^4.0.0",
-    "react": "16.12.0",
+    "prop-types": "^15.7.2",
     "react-apple-login": "^1.1.1",
     "react-device-detect": "^1.11.14",
-    "react-dom": "16.12.0",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.1.21",
-    "react-i18next": "^11.8.1",
+    "react-i18next": "^11.7.3",
     "react-lazyload": "^2.6.5",
     "store": "^2.0.12"
   }

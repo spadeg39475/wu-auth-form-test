@@ -40,7 +40,7 @@ function AuthForm({
 
   useEffect(() => {
     i18n.changeLanguage(language)
-  }, language)
+  }, [language])
 
   const next = () => {
     setStep((prevState) => prevState + 1)

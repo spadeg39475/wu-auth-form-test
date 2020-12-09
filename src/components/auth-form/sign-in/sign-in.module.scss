@@ -31,6 +31,7 @@
     font-weight: 500;
     letter-spacing: 2.76px;
     margin-bottom: $m-sp;
+    text-transform: capitalize;
 
     @include for-size(tablet-portrait-up) {
       font-size: 28px;
@@ -68,11 +69,13 @@
     font-size: 12px;
     letter-spacing: 1.4px;
     margin-top: $s-sp;
+
     .hint {
       color: $shadow-blue;
       outline: none;
       cursor: pointer;
     }
+
     @include for-size(tablet-portrait-up) {
       font-size: 13px;
     }
