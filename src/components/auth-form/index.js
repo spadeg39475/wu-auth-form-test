@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Proptypes from 'prop-types'
 import { Formik, Form } from 'formik'
+import { useTranslation } from 'react-i18next'
 
 import {
   signInValidate,
@@ -31,9 +32,15 @@ function AuthForm({
   toggleAuthLayout,
   termsOfServiceUrl,
   state,
-  children
+  children,
+  language = 'tw'
 }) {
+  const { i18n } = useTranslation()
   const [step, setStep] = useState(1)
+
+  useEffect(() => {
+    i18n.changeLanguage(language)
+  }, language)
 
   const next = () => {
     setStep((prevState) => prevState + 1)
