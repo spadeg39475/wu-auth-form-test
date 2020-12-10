@@ -3,11 +3,8 @@ import Proptypes from 'prop-types'
 import { Formik, Form } from 'formik'
 import { I18nextProvider } from 'react-i18next'
 
-import {
-  signInValidate,
-  signUpValidate
-} from '../../lib/validator/auth-fields.js'
-import { isIosWebview, isAndroidWebview } from '../../lib/device.js'
+import { signInValidate, signUpValidate } from '../../lib/validator/auth-fields'
+import { isIosWebview, isAndroidWebview } from '../../lib/device'
 import i18nInstance from '../../i18n'
 
 import SignIn from './sign-in'

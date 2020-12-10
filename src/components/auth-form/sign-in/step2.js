@@ -71,6 +71,7 @@ export default function SignInFormStep2({
 
           <div className={cx('container--prompt')}>
             {t('dont_have_account_yet')}
+
             <span
               className={cx('hint')}
               onClick={toggleAuthLayout}

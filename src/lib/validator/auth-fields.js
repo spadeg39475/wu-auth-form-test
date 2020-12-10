@@ -15,8 +15,8 @@ export function signUpValidate(values) {
     errors.username = i18n.t('required_field')
   }
 
-  errors.password = validatePwd(password)
-  errors.email = validateEmail(email)
+  validatePwd(errors, password)
+  validateEmail(errors, email)
 
   return errors
 }
@@ -25,22 +25,24 @@ export function signInValidate(values) {
   const errors = {}
   const { email, password } = values
 
-  errors.password = validatePwd(password)
-  errors.email = validateEmail(email)
+  validatePwd(errors, password)
+  validateEmail(errors, email)
 
   return errors
 }
 
-function validatePwd(password) {
-  if (_isEmpty(password)) return i18n.t('required_field')
-  if (!isValidPwd(password)) return i18n.t('pwd.plhdr_set')
+function validatePwd(errors, password) {
+  let msg
+  if (_isEmpty(password)) msg = i18n.t('required_field')
+  if (!isValidPwd(password)) msg = i18n.t('pwd.plhdr_set')
 
-  return null
+  if (msg) errors.password = msg
 }
 
-function validateEmail(email) {
-  if (_isEmpty(email)) return i18n.t('required_field')
-  if (!isValidEmail(email)) return i18n.t('email.err')
+function validateEmail(errors, email) {
+  let msg
+  if (_isEmpty(email)) msg = i18n.t('required_field')
+  if (!isValidEmail(email)) msg = i18n.t('email.err')
 
-  return null
+  if (msg) errors.email = msg
 }

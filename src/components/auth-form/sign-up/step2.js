@@ -81,6 +81,7 @@ export default function SignUpFormStep2({
 
           <div className={cx('container--prompt')}>
             {`${t('terms_of_service.signup_means_agree')}`}
+
             <a target='_blank' className={cx('hint')} href={termsOfServiceUrl}>
               {t('terms_of_service.policies')}
             </a>
