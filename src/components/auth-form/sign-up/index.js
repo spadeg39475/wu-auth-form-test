@@ -8,6 +8,7 @@ import GoogleLogin from 'react-google-login'
 import { useTranslation } from 'react-i18next'
 
 import WebpImg from '../../webp-img'
+import { isLocaleTW } from '../../../i18n'
 import SignUpStep2 from './step2.js'
 
 import styles from './sign-up.module.scss'
@@ -58,7 +59,7 @@ export default function SignUpForm({
         <div className={cx('container--image', 'dialog')}>
           <WebpImg
             imgUrl={`https://wordup-production-public.s3-ap-northeast-1.amazonaws.com/shop/assets/sign+up+page/dialog${
-              lang === 'tw' ? '' : `_${lang}`
+              isLocaleTW(lang) ? '' : `_${lang}`
             }.png`}
             alt='dialog'
             lazyLoad={false}

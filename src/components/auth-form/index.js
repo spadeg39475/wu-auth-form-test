@@ -5,7 +5,7 @@ import { I18nextProvider } from 'react-i18next'
 
 import { signInValidate, signUpValidate } from '../../lib/validator/auth-fields'
 import { isIosWebview, isAndroidWebview } from '../../lib/device'
-import i18nInstance from '../../i18n'
+import i18nInstance, { locales } from '../../i18n'
 
 import SignIn from './sign-in'
 import SignUp from './sign-up'
@@ -30,7 +30,7 @@ function AuthForm({
   termsOfServiceUrl,
   state,
   children,
-  language = 'tw'
+  language = locales.tw
 }) {
   const [step, setStep] = useState(1)
 
