@@ -13,13 +13,13 @@
     },
     "username": {
       "title": "Username",
-      "plhdr": "Your name",
+      "plhdr": "Username",
       "err": "Please fill in your username"
     },
     "email": {
       "login": "Email",
       "signup": "Email",
-      "plhdr": "Your email address",
+      "plhdr": "Email",
       "plhdr_signup": "An email address as your account",
       "err": "Invalid email address"
     },
@@ -32,14 +32,14 @@
     },
     "pwd": {
       "title": "Password",
-      "plhdr": "Your password",
+      "plhdr": "Password",
       "plhdr_set": "At least 6 characters",
       "err": {
         "length_invalid": "Must be at least 6 characters long"
       }
     },
     "terms_of_service": {
-      "signup_means_agree": "Sign up your account means you understand and agree to",
+      "signup_means_agree": "Signing up means you have read and agreed to",
       "policies": "Privacy Policy and Terms of Service"
     }
   }
